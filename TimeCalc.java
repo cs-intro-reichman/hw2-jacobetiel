@@ -1,46 +1,26 @@
 public class TimeCalc {
     public static void main(String[] args) {
-        String timeInput = args[0];
+        String time = args[0];
         int minutesToAdd = Integer.parseInt(args[1]);
-        timeInput = timeInput.replace(":",""); // removes : from the time input string
-        int startTime = Integer.parseInt(timeInput);
-        System.out.println("startTime = "+startTime + ", minutes need to add " + minutesToAdd); // jjust to check
-        int hoursToAdd = (minutesToAdd/60);
-        int finalHour = 0;
-        int startHour = startTime/100;
-        int startMinutes = startTime%60;
-        int extraHours = 0;
-        if (startMinutes+(minutesToAdd%60)>60)
-            extraHours = (startMinutes+(minutesToAdd%60)/60);
-        // next if block computes the final hour
-        if (minutesToAdd>60) { 
-            //startHour = hoursToAdd;
-            finalHour = startHour+hoursToAdd;
-            minutesToAdd= minutesToAdd%60;
-            System.out.println("start hour :"+startHour+" final hour rn is: "+finalHour+" minutes left to add: "+minutesToAdd);
-    }   else {
-            if (startHour < 10)
-                System.out.print("0"+startHour+":");
-            else
-                System.out.print(startHour+":");
-
-
-    }
-        if (finalHour > 10 && finalHour < 24) 
-            System.out.print(finalHour+":");
-        if (finalHour >24) {
-                finalHour = finalHour-24;
-                if (finalHour<10)
-                    System.out.print("0"+finalHour+":");
-                else
-                    System.out.print(finalHour);
-                
-        }
-        if (minutesToAdd> 9 && minutesToAdd < 60)
-            System.out.println(minutesToAdd);
+        time = time.replace(":",""); // removes : from the time input string
+        int startTime = Integer.parseInt(time);
+        int hours = startTime/100;
+        int minutes = startTime%100;
+        System.out.println("startTime = "+startTime + ", minutes need to add " + minutesToAdd+" hours is: "+hours+" minutes is: "+minutes); // jjust to check
+        int totalMin = (hours*60)+minutes+minutesToAdd;
+        int totalHours = totalMin/60;
+        int newHour = totalHours%24;
+        int newMin = totalMin-(totalHours*60);
+        System.out.println("total min: "+totalMin+" totalHours: "+totalHours+" newHour: "+newHour+" newMin: "+newMin);
+        if (newHour < 10 && newMin < 10)
+            System.out.print("0"+newHour+":0"+newMin);
         else
-            System.out.println("0"+minutesToAdd);
-        
-        
+            if (newHour > 9 && newMin<10)
+                System.out.print(newHour+":"+"0"+newMin);
+            else
+                if (newHour<10 && newMin>9)
+                    System.out.print("0"+newHour+":"+newMin);
+                else
+                    System.out.print(newHour+":"+newMin);
     }
 }
