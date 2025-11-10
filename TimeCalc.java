@@ -6,12 +6,12 @@ public class TimeCalc {
         int startTime = Integer.parseInt(time);
         int hours = startTime/100;
         int minutes = startTime%100;
-        System.out.println("startTime = "+startTime + ", minutes need to add " + minutesToAdd+" hours is: "+hours+" minutes is: "+minutes); // jjust to check
+        //System.out.println("startTime = "+startTime + ", minutes need to add " + minutesToAdd+" hours is: "+hours+" minutes is: "+minutes); // jjust to check
         int totalMin = (hours*60)+minutes+minutesToAdd;
         int totalHours = totalMin/60;
         int newHour = totalHours%24;
         int newMin = totalMin-(totalHours*60);
-        System.out.println("total min: "+totalMin+" totalHours: "+totalHours+" newHour: "+newHour+" newMin: "+newMin);
+        //System.out.println("total min: "+totalMin+" totalHours: "+totalHours+" newHour: "+newHour+" newMin: "+newMin);
         if (newHour < 10 && newMin < 10)
             System.out.print("0"+newHour+":0"+newMin);
         else
