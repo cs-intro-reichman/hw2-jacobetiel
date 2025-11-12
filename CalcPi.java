@@ -6,7 +6,7 @@ public class CalcPi {
 		int deno = 3;
 		double approx = 1;
 		
-		for(int i=1; i<=num;i++ ) {
+		for(int i=1; i<=num-1;i++ ) {
 			
 			if (i%2 != 0)
 				approx = approx - (1.0/deno);
@@ -15,9 +15,9 @@ public class CalcPi {
 			
 				
 				deno = deno+2;
+				System.out.println ("pi according to Java: "+ Math.PI);
+				System.out.println ("pi, approximated:     "+ (approx*4));
 			}
-			System.out.println ("pi according to Java: "+ Math.PI);
-			System.out.println ("pi, approximated:     "+ (approx*4));
 
 	}
 }
