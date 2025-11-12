@@ -14,10 +14,10 @@ public class CalcPi {
 				approx = approx + (1.0/deno);
 			
 				
-			deno = deno+2;
+				deno = deno+2;
+			}
 			System.out.println ("pi according to Java: "+ Math.PI);
 			System.out.println ("pi, approximated:     "+ (approx*4));
-}
 
 	}
 }
