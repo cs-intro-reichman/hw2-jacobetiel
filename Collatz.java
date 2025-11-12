@@ -12,8 +12,8 @@ public class Collatz {
 			for (int i=1; i <= seed; i++) {
 				seeder = i;	
 				counter = 1;
-				System.out.print(seeder+ " ");
-					while (seeder != 1) {
+				System.out.print(seeder);
+					do {
 						
 						if (seeder%2==0) {
 							seeder = seeder/2;
@@ -25,7 +25,7 @@ public class Collatz {
 							System.out.print(" "+seeder);
 							counter++;
 						}
-					} 
+					} while (seeder != 1);
 					System.out.print(" ("+counter+")");
 					System.out.println("");
 					finishedSeq++;
@@ -37,7 +37,7 @@ public class Collatz {
 				seeder = i;	
 				counter = 1;
 				
-					while (seeder != 1) {
+					do {
 						
 						if (seeder%2==0) {
 							seeder = seeder/2;
@@ -47,7 +47,7 @@ public class Collatz {
 							seeder = (3*seeder)+1;
 							counter++;
 						}
-					} 
+					} while (seeder != 1);
 					finishedSeq++;
 					}
 				System.out.println("Every one of the first "+finishedSeq +" hailstone sequences reached 1.");	
