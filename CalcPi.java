@@ -6,6 +6,13 @@ public class CalcPi {
 		int deno = 3;
 		double approx = 1;
 		
+		if (num == 1) {
+			approx = approx = approx - (1.0/deno); 
+			return;
+		}
+
+
+
 		for(int i=1; i<=num-1;i++ ) {
 			
 			if (i%2 != 0)
